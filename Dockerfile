@@ -5,6 +5,7 @@ RUN \
   apt-get update && apt-get install -y bind9utils sudo libgearman-dev && \
   docker-php-source extract && \
   docker-php-ext-install pcntl && \
+  docker-php-ext-install sockets && \
   mkdir /tmp/gearman && \
   curl -Lo /tmp/gearman.tar.gz https://github.com/wcgallego/pecl-gearman/archive/gearman-2.0.3.tar.gz && \
   tar -xvf /tmp/gearman.tar.gz --strip 1 --directory /tmp/gearman && \
