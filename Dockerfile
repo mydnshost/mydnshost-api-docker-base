@@ -4,6 +4,7 @@ MAINTAINER Shane Mc Cormack <dataforce@dataforce.org.uk>
 RUN \
   apt-get update && apt-get install -y bind9utils sudo libgearman-dev && \
   docker-php-source extract && \
+  docker-php-ext-install pcntl && \
   pecl install -o -f redis && \
   rm -rf /tmp/pear && \
   docker-php-ext-enable redis && \
