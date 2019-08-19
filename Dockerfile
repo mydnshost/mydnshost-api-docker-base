@@ -4,6 +4,8 @@ MAINTAINER Shane Mc Cormack <dataforce@dataforce.org.uk>
 RUN \
   apt-get update && apt-get install -y bind9utils sudo && \
   docker-php-source extract && \
+  pecl install mongodb && \
+  docker-php-ext-enable mongodb && \
   docker-php-ext-install pcntl && \
   docker-php-ext-install sockets && \
   docker-php-source delete && \
