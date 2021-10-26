@@ -2,6 +2,8 @@ FROM registry.shanemcc.net/public/docker-apache-php-base:latest
 MAINTAINER Shane Mc Cormack <dataforce@dataforce.org.uk>
 
 RUN \
+  apt-get -y update && apt-get -y install apt-utils software-properties-common dctrl-tools && \
+  add-apt-repository -y ppa:isc/bind && \
   apt-get update && apt-get install -y bind9utils sudo && \
   docker-php-source extract && \
   pecl install mongodb && \
