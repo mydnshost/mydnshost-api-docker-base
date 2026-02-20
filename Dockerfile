@@ -5,7 +5,7 @@ RUN \
   apt-get update && apt-get -y install apt-transport-https lsb-release ca-certificates curl wget && \
   wget -O /etc/apt/trusted.gpg.d/bind.gpg https://packages.sury.org/bind/apt.gpg && \
   sh -c 'echo "deb https://packages.sury.org/bind/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/bind.list' && \
-  apt-get update && apt-get install -y bind9utils sudo && \
+  apt-get update && apt-get install -y bind9utils bind9-dnsutils sudo && \
   docker-php-source extract && \
   pecl install mongodb && \
   docker-php-ext-enable mongodb && \
